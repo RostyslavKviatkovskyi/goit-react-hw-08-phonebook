@@ -1,4 +1,5 @@
-import React, { useCallback } from 'react';
+// import React, { useCallback } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 // import { selectFilterName, setSearch } from 'redux/store';
