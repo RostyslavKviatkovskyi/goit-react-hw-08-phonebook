@@ -1,10 +1,11 @@
-import {
-  combineReducers,
-  configureStore,
-  createEntityAdapter,
-  createSelector,
-  getDefaultMiddleware,
-} from '@reduxjs/toolkit';
+// import {
+//   combineReducers,
+//   configureStore,
+//   createEntityAdapter,
+//   createSelector,
+//   getDefaultMiddleware,
+// } from '@reduxjs/toolkit';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
 // import { createSlice, nanoid } from '@reduxjs/toolkit';
 // import { isNotNull } from '../helper';
 import storage from 'redux-persist/lib/storage';
