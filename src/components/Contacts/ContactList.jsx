@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 // import { deleteContact, selectAllContacts } from 'redux/store';
 import { deleteContact } from 'redux/contactsSlice';
 import { useMemo } from 'react';
-import { selectContacts, selectFilter, selectFilters } from 'redux/selectors';
+import { selectContacts, selectFilter } from 'redux/selectors';
 
 export const ContactList = () => {
   const dispatch = useDispatch();
