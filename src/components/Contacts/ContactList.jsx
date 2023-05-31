@@ -4,12 +4,26 @@ import { List, ListItem, ListButton } from './ContactsListStyled';
 import { useDispatch, useSelector } from 'react-redux';
 // import { deleteContact, selectAllContacts } from 'redux/store';
 import { deleteContact } from 'redux/contactsSlice';
+import { useMemo } from 'react';
 
 export const ContactList = () => {
   const dispatch = useDispatch();
 
   // const contacts = useSelector(selectAllContacts);
   const contacts = useSelector(state => state.contacts);
+  const filter = useSelector(state => state.filter);
+  // const normalizedFilter = useMemo(() => filter.toLowerCase(), [filter]);
+  const filteredContacts = useMemo(
+    () =>
+      contacts.filter(contact =>
+        contact.name.toLowerCase().includes(filter.toLowerCase())
+      ),
+    [contacts, filter]
+  );
+
+  // const filteredContacts = contacts.filter(({ name }) =>
+  //   name.toLowerCase().includes(filter.toLowerCase())
+  // );
 
   const handleDelete = useCallback(
     id => event => {
@@ -23,7 +37,7 @@ export const ContactList = () => {
     <>
       {contacts.length > 0 && (
         <List>
-          {contacts.map(({ name, id, number }) => (
+          {filteredContacts.map(({ name, id, number }) => (
             <ListItem key={id}>
               <p>
                 {name}: {number}
@@ -45,5 +59,4 @@ ContactList.prototype = {
       number: PropTypes.string.isRequired,
     })
   ),
-  onDeleteContacts: PropTypes.func.isRequired,
 };
