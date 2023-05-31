@@ -5,13 +5,14 @@ import { useDispatch, useSelector } from 'react-redux';
 // import { deleteContact, selectAllContacts } from 'redux/store';
 import { deleteContact } from 'redux/contactsSlice';
 import { useMemo } from 'react';
+import { selectContacts, selectFilter, selectFilters } from 'redux/selectors';
 
 export const ContactList = () => {
   const dispatch = useDispatch();
 
   // const contacts = useSelector(selectAllContacts);
-  const contacts = useSelector(state => state.contacts);
-  const filter = useSelector(state => state.filter);
+  const contacts = useSelector(selectContacts);
+  const filter = useSelector(selectFilter);
   // const normalizedFilter = useMemo(() => filter.toLowerCase(), [filter]);
   const filteredContacts = useMemo(
     () =>

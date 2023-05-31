@@ -4,13 +4,14 @@ import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 // import { selectFilterName, setSearch } from 'redux/store';
 import { updateFilter } from 'redux/filterSlice';
+import { selectFilter } from 'redux/selectors';
 
 export const Filter = () => {
   const dispatch = useDispatch();
 
   // const filterValue = useSelector(selectFilterName);
 
-  const filterValue = useSelector(state => state.filter);
+  const filterValue = useSelector(selectFilter);
 
   // const handleChange = useCallback(
   //   e => {
