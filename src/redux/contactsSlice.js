@@ -2,7 +2,7 @@ import { createSlice, isAnyOf } from '@reduxjs/toolkit';
 import { fetchContacts, addContact, deleteContact } from './operations';
 
 const contactsinitialState = {
-  contacts: [],
+  items: [],
   isLoading: false,
   error: null,
 };
@@ -17,15 +17,15 @@ const handleFulfilled = state => {
 };
 
 const handleFulfilledGet = (state, action) => {
-  state.contacts = action.payload;
+  state.items = action.payload;
 };
 
 const handleFulfilledPost = (state, action) => {
-  state.contacts.push(action.payload);
+  state.items.push(action.payload);
 };
 
 const handleFulfilledDelete = (state, action) => {
-  state.contacts = state.contacts.filter(el => el.id !== action.payload.id);
+  state.items = state.items.filter(el => el.id !== action.payload.id);
 };
 
 const handleRejected = (state, action) => {
@@ -68,5 +68,4 @@ const contactsSlice = createSlice({
   },
 });
 
-// export const { addContact, deleteContact } = contactsSlice.actions;
 export const contactsReducer = contactsSlice.reducer;

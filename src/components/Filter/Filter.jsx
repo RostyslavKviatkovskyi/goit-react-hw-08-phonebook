@@ -9,18 +9,7 @@ import { selectFilter } from 'redux/selectors';
 export const Filter = () => {
   const dispatch = useDispatch();
 
-  // const filterValue = useSelector(selectFilterName);
-
   const filterValue = useSelector(selectFilter);
-
-  // const handleChange = useCallback(
-  //   e => {
-  //     e.preventDefault();
-
-  //     dispatch(setSearch(e.target.value ?? ''));
-  //   },
-  //   [dispatch]
-  // );
 
   const handleChange = e => {
     dispatch(updateFilter(e.target.value));
