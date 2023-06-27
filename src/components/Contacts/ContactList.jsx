@@ -7,6 +7,8 @@ import { useMemo } from 'react';
 import { selectContacts, selectFilter } from 'redux/selectors';
 import { deleteContact, fetchContacts } from 'redux/operations';
 
+import Button from '@mui/material/Button';
+
 export const ContactList = () => {
   const dispatch = useDispatch();
 
@@ -45,12 +47,15 @@ export const ContactList = () => {
       {isLoading && <div>Loading...</div>}
       {contacts.length > 0 && (
         <List>
-          {filteredContacts.map(({ name, id, phone }) => (
+          {filteredContacts.map(({ name, id, number }) => (
             <ListItem key={id}>
               <p>
-                {name}: {phone}
+                {name}: {number}
               </p>
-              <ListButton onClick={handleDelete(id)}>Delete</ListButton>
+              {/* <ListButton onClick={handleDelete(id)}>Delete</ListButton> */}
+              <Button onClick={handleDelete(id)} sx={{ color: '#000000' }}>
+                Delete
+              </Button>
             </ListItem>
           ))}
         </List>

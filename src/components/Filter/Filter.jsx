@@ -6,6 +6,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { updateFilter } from 'redux/filterSlice';
 import { selectFilter } from 'redux/selectors';
 
+import Input from '@mui/material/Input';
+
 export const Filter = () => {
   const dispatch = useDispatch();
 
@@ -20,7 +22,7 @@ export const Filter = () => {
       <label htmlFor="">
         <p> Find contacts by name</p>
         {/* <input type="text" value={filterValue} onChange={handleChange} /> */}
-        <input
+        <Input
           type="text"
           // name="filter"
           value={filterValue}
