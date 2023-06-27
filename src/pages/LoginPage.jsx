@@ -1,15 +1,13 @@
-// import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
-import { loginThunk, profileThunk } from 'redux/auth/thunk';
-// import { selectToken } from 'redux/selectors';
+import { useNavigate } from 'react-router-dom';
+import { loginThunk } from 'redux/auth/thunk';
+
 import Input from '@mui/material/Input';
 import Button from '@mui/material/Button';
 import InputLabel from '@mui/material/InputLabel';
 import Box from '@mui/material/Box';
 
 export const LoginPage = () => {
-  // const authToken = useSelector(selectToken);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -23,15 +21,10 @@ export const LoginPage = () => {
     dispatch(loginThunk(newUser))
       .unwrap()
       .then(() => {
-        dispatch(profileThunk());
         navigate('/contacts');
       })
       .catch();
   };
-
-  // useEffect(() => {
-  //   authToken && navigate('/contacts');
-  // }, [authToken, navigate]);
 
   return (
     <>
@@ -51,9 +44,11 @@ export const LoginPage = () => {
         </Box>
         <Box>
           {/* <Link to="/register">To rigistration page</Link> */}
-          <Button component={Link} to="/register" sx={{ color: '#000000' }}>
+
+          {/* <Button component={Link} to="/register" sx={{ color: '#000000' }}>
             Register
-          </Button>
+          </Button> */}
+
           {/* <button type="submit">Login</button> */}
           <Button type="submit" sx={{ color: '#000000' }}>
             Login

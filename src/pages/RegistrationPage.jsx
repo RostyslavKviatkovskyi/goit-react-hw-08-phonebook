@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { signUpThunk } from 'redux/auth/thunk';
 import Input from '@mui/material/Input';
 import Button from '@mui/material/Button';
@@ -52,9 +52,11 @@ export const RegistrationPage = () => {
         </Box>
         <Box>
           {/* <Link to="/login">To login page</Link> */}
-          <Button component={Link} to="/login" sx={{ color: '#000000' }}>
+
+          {/* <Button component={Link} to="/login" sx={{ color: '#000000' }}>
             Login
-          </Button>
+          </Button> */}
+
           {/* <button type="submit">Register</button> */}
           <Button type="submit" sx={{ color: '#000000' }}>
             Register

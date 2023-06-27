@@ -1,10 +1,6 @@
 import { Link, Outlet } from 'react-router-dom';
-// import { UserMenu } from './UserMenu';
 import { useDispatch, useSelector } from 'react-redux';
-// import { useEffect } from 'react';
-// import { selectToken } from 'redux/selectors';
 import { logOutThunk } from 'redux/auth/thunk';
-
 import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
@@ -31,17 +27,22 @@ export const SharedLayout = () => {
               <Button component={Link} to="/" sx={{ color: '#fff' }}>
                 Home page
               </Button>
-              <Button component={Link} to="/register" sx={{ color: '#fff' }}>
-                Register page
-              </Button>
+              {!access_token && (
+                <Button component={Link} to="/register" sx={{ color: '#fff' }}>
+                  Register page
+                </Button>
+              )}
+
               {!access_token && (
                 <Button component={Link} to="/login" sx={{ color: '#fff' }}>
                   Login page
                 </Button>
               )}
-              <Button component={Link} to="/contacts" sx={{ color: '#fff' }}>
-                Contacts
-              </Button>
+              {access_token && (
+                <Button component={Link} to="/contacts" sx={{ color: '#fff' }}>
+                  Contacts
+                </Button>
+              )}
             </Box>
             <Typography
               variant="h6"

@@ -1,14 +1,11 @@
-// import { Form, FormButton, LabelText } from './FormStyled';
 import { useDispatch } from 'react-redux';
 import { addContact } from 'redux/operations';
-// import { selectContacts } from 'redux/selectors';
 import Input from '@mui/material/Input';
 import Button from '@mui/material/Button';
 import InputLabel from '@mui/material/InputLabel';
 import Box from '@mui/material/Box';
 
 export const ContactForm = () => {
-  // const contacts = useSelector(selectContacts);
   const dispatch = useDispatch();
 
   const handleSubmit = async e => {
