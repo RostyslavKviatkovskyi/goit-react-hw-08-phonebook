@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
-import { loginThunk, signUpThunk } from 'redux/auth/thunk';
+import { signUpThunk } from 'redux/auth/thunk';
 import Input from '@mui/material/Input';
 import Button from '@mui/material/Button';
 import InputLabel from '@mui/material/InputLabel';
