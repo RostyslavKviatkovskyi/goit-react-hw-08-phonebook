@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { List, ListItem, ListButton } from './ContactsListStyled';
+import { List, ListItem } from './ContactsListStyled';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { useMemo } from 'react';
